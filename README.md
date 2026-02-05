@@ -1,75 +1,183 @@
-# Locomotive
+# 🚁 Drontylity Engine
 
-[![Build Status](https://travis-ci.com/locomotivecms/engine.svg?branch=master)](https://travis-ci.com/locomotivecms/engine) [![Code Climate](https://codeclimate.com/github/locomotivecms/engine/badges/gpa.svg)](https://codeclimate.com/github/locomotivecms/engine) [![Coverage Status](https://img.shields.io/coveralls/locomotivecms/engine.svg)](https://coveralls.io/r/locomotivecms/engine?branch=master) [![Join the chat at https://gitter.im/locomotivecms/engine](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/locomotivecms/engine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## Průlomová platforma pro sdílení autonomních dronů
 
-Locomotive is an open source platform to create, publish and edit sites (CMS). It is designed to save time and help you focus on what matters: front-end technology, standard development process and a very low learning curve for your clients.
+Drontylity představuje revoluční řešení urbánní mobility budoucnosti. Naše vize spojuje pokročilé drony s umělou inteligencí, obnovitelnou energií a flexibilním sdílením pro vytvoření ekologické dopravní sítě nové generace.
 
-Locomotive relies on a **very original workflow**:
+---
 
-- Sites are coded locally using our open source tool: [Wagon](https://github.com/locomotivecms/wagon).
-- Sites are deployed to the platform (engine) thanks to our internal API.
-- A back-office for the end-users is automatically generated based on the custom models and editable regions described by the developers.
+## 🌟 Co je Drontylity?
 
-![Locomotive](https://i.imgur.com/Qy1K4fT.jpg)
+Drontylity Engine je softwarový systém pro správu flotily autonomních leteckých zařízení. Aplikace umožňuje uživatelům objednat přepravu dronem z bodu A do bodu B, sledovat let v reálném čase a využívat různé úrovně služeb podle jejich potřeb.
 
-Visit the Locomotive official website [here](https://www.locomotivecms.com) for more information.
+**Naše služba nabízí tři úrovně:**
 
-## Features
+**Level 1 - Základní přeprava**  
+Uživatel dojde na předem určenou stanici, kde dron čeká připravený k odletu. Jednoduchý a cenově dostupný způsob rychlé přepravy.
 
-- Multi-sites natively supported
-- Uses Liquid, a simple and clean templating language
-- Easy to add custom sections, content types, no SQL needed
-- Beautiful and intuitive editing interface
-- Can fully localize all the content and pages
-- Embed a Restful API to manage every site
-- Develop and preview sites locally with your favorite tools **(Wagon)**
-- Support for Webpack, SASS, HAML and Coffee Script **(Wagon)**
+**Level 2 - Osobní přílet**  
+Dron přiletí přímo k aktuální pozici uživatele a následně ho dopraví do cílové destinace. Maximální komfort bez nutnosti docházet na stanici.
 
-## Instructions and help
+**Level 3 - Autonomní sdílení**  
+Podobně jako carsharing - uživatel si pronajme dron na libovolnou dobu, použije ho podle svých potřeb a vrátí do kteréhokoli dostupného doku v síti.
 
-- [Documentation](https://doc.locomotivecms.com/)
-- Get help with Locomotive or discuss technical issues on [Gitter](https://gitter.im/locomotivecms/engine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) or [here](https://locomotive-v3.readme.io/discuss).
-- [Follow us on twitter](http://twitter.com/locomotivecms)
+---
 
-## Contribute
+## ✨ Proč Drontylity?
 
-Have a look at our [Trello](https://trello.com/b/kRiy1dZu/locomotive-v3) board to see what's next or see where you can help out.
+### Výhody našeho řešení
 
-### Technologies
+**🌿 Ekologická udržitelnost**  
+Všechny drony v naší flotile využívají výhradně čistou energii z fotovoltaických a větrných dobíjecích stanic rozmístěných po městě.
 
-Here is a list of the main gems used to power the Locomotive platform:
+**⚡ Rychlost a efektivita**  
+Přesun vzduchem eliminuje dopravní zácpy a zkracuje časy přepravy až o 70% oproti pozemní dopravě v městských oblastech.
 
-- Ruby 3+
-- Rails 7     - *web framework*
-- Bootstrap   - *UI framework*
-- Mongoid 7   - *Object-Document-Mapper for MongoDB 6*
-- Devise 4    - *Authentication*
-- Carrierwave - *Upload*
-- Pundit      - *Permissions*
+**🎯 Flexibilita využití**  
+Tři různé úrovně služeb zajišťují, že každý najde řešení odpovídající jeho potřebám a rozpočtu.
 
-### Translating the back-office
+**🤖 Plná automatizace**  
+Senzorické systémy a AI navigace zajišťují bezpečný let bez nutnosti lidského pilotování. Kolizní detekce pracuje v reálném čase.
 
-By default, the Locomotive back-office is fully translated in English, Dutch and Greek.
+**📱 Intuitivní ovládání**  
+Mobilní aplikace s jednoduchým rozhraním - zadejte start a cíl, vyberte úroveň služby a sledujte přílet dronu na mapě.
 
-Adding a new language is pretty straightforward since we now manage all our I18n translation keys in [Transifex](https://www.transifex.com), a platform dedicated to this kind of task.
+---
 
-Here is our Transifex portal page: [https://www.transifex.com/locomotive/locomotive-engine](https://www.transifex.com/locomotive/locomotive-engine). Feel free to sign up and translate!
+## ⚠️ Čím Drontylity NENÍ
 
-### How to contribute
+Je důležité pochopit současná omezení technologie:
 
-Locomotive is an open source project, we encourage contributions. If you have found a bug and want to contribute a fix, or have a new feature you would like to add, follow the steps below to get your patch into the project:
+**Není náhradou všech dopravních prostředků**  
+Drony jsou ideální pro kratší a střední vzdálenosti v městských oblastech, nikoliv pro dálkové lety přes kontinenty.
 
-- Install ruby, mongoDB and phantomjs
-- Clone the project <code>git clone git@github.com:locomotivecms/engine.git</code>
-- Setup a virtual host entry for <code>locomotive.local</code> to point to localhost
-- Start mongodb if it is not already running
-- Run the tests <code>bundle exec rake</code>
-- Write your failing tests
-- Make the tests pass
-- [Create a GitHub pull request](http://help.github.com/send-pull-requests)
+**Není dostupné za všech povětrnostních podmínek**  
+Bezpečnost je priorita - při silném dešti, bouřkách nebo extrémním větru je provoz pozastaven.
 
-### Contact
+**Není bez regulačních požadavků**  
+Provoz vyžaduje povolení leteckých úřadů a dodržování vzdušných koridorů stanovených legislativou.
 
-Feel free to contact me at didier at nocoffee dot fr.
+**Není řešení pro okamžitý transport**  
+I když je služba rychlá, příprava dronu a navigace k vašemu místu vyžaduje určitý čas (obvykle 3-8 minut).
 
-Copyright (c) 2010-2024 NoCoffee, released under the MIT license
+**Není vhodné pro přepravu nadměrného nákladu**  
+Aktuální kapacita je optimalizována pro jednoho pasažéra nebo ekvivalentní hmotnost nákladu (cca 80-100 kg).
+
+---
+
+## 🎯 Naše mise
+
+**Transformovat městskou mobilitu prostřednictvím autonomních leteckých systémů napájených obnovitelnou energií.**
+
+Věříme, že budoucnost dopravy neleží jen na silnicích, ale i ve vzduchu. Naším cílem je vytvořit síť, která:
+- Odlehčí přetíženým městským komunikacím
+- Dramaticky sníží emise CO₂ v dopravním sektoru  
+- Zpřístupní rychlou mobilitu širokému spektru obyvatel
+- Posune lidstvo blíže k vizi plně udržitelných měst
+
+---
+
+## 🚀 Cíle projektu
+
+### Krátkodobé (6-12 měsíců)
+- Vyvinout funkční MVP mobilní aplikace s rezervačním systémem
+- Implementovat základní backend pro správu flotily a tras
+- Otestovat integraci s komerčními dronvými platformami (DJI, Skydio)
+- Získat pilotní licenci pro testování v kontrolovaném prostoru
+
+### Střednědobé (1-2 roky)
+- Spustit Level 1 službu v jednom pilotním městě s 10-15 stanicemi
+- Rozšířit flotilu na 50+ autonomních jednotek
+- Implementovat pokročilé AI algoritmy pro optimalizaci tras a energetického managementu
+- Vybudovat prvních 20 solárních/větrných dobíjecích stanic
+
+### Dlouhodobé (3-5 let)
+- Rozšíření do 10+ metropolí v Evropě
+- Plná autonomie všech úrovní služeb (Level 1-3)
+- Flotila 500+ dronů s kompletní obnovitelnou energetickou infrastrukturou
+- Integrace s dalšími dopravními systémy (MHD, vlaky) pro multimodální mobilitu
+- Otevření API pro třetí strany a vytvoření ekosystému partnerů
+
+---
+
+## 🛠️ Architektura systému
+
+### Mobilní aplikace (Frontend)
+- Interaktivní mapa s výběrem trasy
+- Real-time tracking pozice dronu
+- Platební integrace a správa rezervací
+- Dashboard pro Level 3 (stav baterie, dostupné doky)
+
+### Serverová logika (Backend)
+- Optimalizační algoritmy pro plánování letových tras
+- Správa energetické sítě a monitoring stavu flotily
+- API pro komunikaci s dronvými jednotkami
+- Analytics a prediktivní modelování poptávky
+
+### IoT vrstva (Drony)
+- Cloudové propojení jednotlivých zařízení
+- Senzorické systémy pro navigaci a kolizní prevenci
+- Telemetrie a diagnostika v reálném čase
+- Automatické procedury pro nouzová přistání
+
+---
+
+## 👥 Jak se zapojit
+
+Hledáme nadšené vývojáře, inženýry a vizionáře, kteří chtějí přispět k revoluci v městské mobilitě!
+
+### Pro vývojáře
+
+**Oblasti, kde potřebujeme pomoc:**
+- Backend vývoj (Python, Node.js, Go)
+- Frontend mobilní aplikace (React Native, Flutter)
+- AI/ML specialisty pro navigační algoritmy
+- IoT inženýry se zkušenostmi s drony
+- DevOps pro cloudovou infrastrukturu
+
+**Jak začít:**
+1. Forkněte tento repozitář
+2. Vytvořte novou větev pro vaši práci (`git checkout -b feature/vase-funkcionalita`)
+3. Commitujte změny s popisnými zprávami
+4. Otevřete Pull Request s detailním popisem vašich úprav
+
+### Pro investory a partnery
+
+Pokud věříte v budoucnost udržitelné urbánní mobility a chcete se podílet na této cestě, kontaktujte nás pro diskusi o partnerství nebo investičních příležitostech.
+
+### Pro testery a early adopters
+
+Jakmile budeme mít funkční prototyp, budeme hledat dobrovolníky pro beta testování v pilotních lokalitách.
+
+---
+
+## 📋 Technologický stack
+
+**Plánované technologie:**
+- Cloud: AWS IoT / Azure IoT Hub
+- Backend: Microservices architektura
+- Database: PostgreSQL + Redis
+- Real-time: WebSocket komunikace
+- AI/ML: TensorFlow pro navigační modely
+- Mapping: Vlastní implementace nad open-source daty
+
+---
+
+## 📄 Právní a patentová ochrana
+
+Pracujeme na patentové ochraně klíčových inovací:
+- Systém autonomního řízení s integrací obnovitelných zdrojů energie
+- Algoritmy pro dynamickou optimalizaci flotily
+- Mechanismy solárně-větrného dobíjení pro vzdušná vozidla
+
+---
+
+## 🌍 Kontakt
+
+Pro otázky, návrhy nebo spolupráci nás kontaktujte prostřednictvím Issues v tomto repozitáři.
+
+**Společně vytvoříme mobilitu budoucnosti! 🚁✨**
+
+---
+
+*Tento projekt je ve fázi koncepce a aktivního vývoje. Veškeré uvedené specifikace a časové rámce jsou orientační a mohou se měnit podle technologického pokroku a tržních podmínek.*
