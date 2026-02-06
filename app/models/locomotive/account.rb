@@ -5,6 +5,7 @@ module Locomotive
     devise *Locomotive.config.devise_modules
     acts_as_token_authenticatable
     include Locomotive::Concerns::Account::APIKey
+    include Locomotive::Concerns::Account::FlightTierSystem
 
     ## devise fields (need to be declared since 2.x) ##
     field :remember_created_at,     type: Time

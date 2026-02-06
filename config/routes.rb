@@ -23,6 +23,11 @@ Locomotive::Engine.routes.draw do
   resource :my_account, controller: 'my_account' do
     put :regenerate_api_key, on: :member
   end
+  
+  # Flight tier access system for Drontylity
+  get 'flight-access', to: 'flight_access#dashboard', as: :flight_access_dashboard
+  post 'flight-access/elevate/:target', to: 'flight_access#elevate_tier', as: :elevate_tier_flight_access
+  post 'flight-access/service/:service', to: 'flight_access#modify_service', as: :modify_service_flight_access
 
   # Back-office: current site, pages, content entries, assets and the site settings
   scope ':site_handle' do
