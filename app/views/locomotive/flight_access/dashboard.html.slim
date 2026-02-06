@@ -1,0 +1,80 @@
+- content_for :head
+  css:
+    .tier-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .tier-badge { font-size: 1.5rem; padding: 0.5rem 1.5rem; border-radius: 25px; display: inline-block; margin: 1rem 0; }
+    .tier-0 { background: #6c757d; color: white; }
+    .tier-1 { background: #0d6efd; color: white; }
+    .tier-2 { background: #ffc107; color: #000; }
+    .tier-3 { background: #198754; color: white; }
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .service-box { border: 2px solid #dee2e6; border-radius: 8px; padding: 1.5rem; background: #f8f9fa; }
+    .service-box.active { border-color: #0d6efd; background: #e7f1ff; }
+    .service-toggle { margin-top: 1rem; }
+    .tier-navigation { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+    .phase-explanation { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 2rem 0; }
+
+.tier-container
+  h1= t('.heading')
+  
+  .tier-badge class="tier-#{@current_tier}"
+    = @tier_label
+  
+  - if current_account.browsing_prospect?
+    .phase-explanation
+      h3= t('.prospect_title')
+      p= t('.prospect_info')
+      = link_to t('.become_subscriber'), elevate_tier_flight_access_path(target: 1), method: :post, class: 'btn btn-primary btn-lg', data: { confirm: t('.confirm_upgrade') }
+  
+  - elsif current_account.subscribed_member?
+    .phase-explanation
+      h3= t('.subscriber_title')
+      p= t('.subscriber_welcome')
+    
+    h2.mt-4= t('.your_services')
+    .service-grid
+      .service-box class="#{'active' if current_account.auto_taxi_allowed?}"
+        h4= t('.service_a_title')
+        p= t('.service_a_desc')
+        .service-toggle
+          - if current_account.auto_taxi_allowed?
+            = link_to t('.deactivate_service'), modify_service_flight_access_path(service: 'auto_taxi'), method: :post, class: 'btn btn-danger'
+          - else
+            = link_to t('.activate_service'), modify_service_flight_access_path(service: 'auto_taxi'), method: :post, class: 'btn btn-success'
+      
+      .service-box class="#{'active' if current_account.pilot_rental_allowed?}"
+        h4= t('.service_b_title')
+        p= t('.service_b_desc')
+        .service-toggle
+          - if current_account.pilot_rental_allowed?
+            = link_to t('.deactivate_service'), modify_service_flight_access_path(service: 'pilot_rental'), method: :post, class: 'btn btn-danger'
+          - else
+            = link_to t('.activate_service'), modify_service_flight_access_path(service: 'pilot_rental'), method: :post, class: 'btn btn-success'
+      
+      .service-box class="#{'active' if current_account.cargo_logistics_allowed?}"
+        h4= t('.service_c_title')
+        p= t('.service_c_desc')
+        .service-toggle
+          - if current_account.cargo_logistics_allowed?
+            = link_to t('.deactivate_service'), modify_service_flight_access_path(service: 'cargo_logistics'), method: :post, class: 'btn btn-danger'
+          - else
+            = link_to t('.activate_service'), modify_service_flight_access_path(service: 'cargo_logistics'), method: :post, class: 'btn btn-success'
+  
+  - elsif current_account.system_overseer?
+    .phase-explanation
+      h3= t('.overseer_title')
+      p= t('.overseer_info')
+      = link_to t('.manage_platform'), '#', class: 'btn btn-warning btn-lg'
+  
+  - elsif current_account.tech_crew?
+    .phase-explanation
+      h3= t('.tech_title')
+      p= t('.tech_info')
+      = link_to t('.fleet_diagnostics'), '#', class: 'btn btn-success btn-lg'
+  
+  - if current_account.super_admin?
+    .tier-navigation
+      h3.w-100= t('.admin_controls')
+      = link_to t('.set_tier_0'), elevate_tier_flight_access_path(target: 0), method: :post, class: 'btn btn-secondary'
+      = link_to t('.set_tier_1'), elevate_tier_flight_access_path(target: 1), method: :post, class: 'btn btn-primary'
+      = link_to t('.set_tier_2'), elevate_tier_flight_access_path(target: 2), method: :post, class: 'btn btn-warning'
+      = link_to t('.set_tier_3'), elevate_tier_flight_access_path(target: 3), method: :post, class: 'btn btn-success'

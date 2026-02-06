@@ -7,6 +7,7 @@ ul.navigation-links
 
     ul.dropdown-menu role='menu' aria-labelledby="navigation-dropdown"
       li= link_to t(:sites, scope: 'locomotive.shared.header'), sites_path
+      li= link_to t(:flight_tier, scope: 'locomotive.shared.header'), flight_access_dashboard_path
       - if policy(current_locomotive_account).edit?
         li= link_to t(:account, scope: 'locomotive.shared.header'), edit_my_account_path(_location: request.fullpath)
       li= link_to t(:help, scope: 'locomotive.shared.header'), 'https://doc.locomotivecms.com', target: '_blank'

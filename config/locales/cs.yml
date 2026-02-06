@@ -29,6 +29,7 @@ cs:
       header:
         welcome: Vítejte, %{name}
         sites: Mé stránky
+        flight_tier: Drontylity Přístup
         account: Nastavení účtu
         see: Viz webová stránka
         help: Pomoc

@@ -43,6 +43,7 @@ en:
       header:
         welcome: Welcome, %{name}
         sites: My sites
+        flight_tier: Drontylity Access
         account: Account settings
         see: See website
         help: Help
